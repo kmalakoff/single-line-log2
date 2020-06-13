@@ -1,19 +1,20 @@
-# single-line-log
+# single-line-log2
 
 Node.js module that keeps writing to the same line in the console (or a stream). Very useful when you write progress bars, or a status message during longer operations. Supports multilines.
 
+This patches single-line-log for columns missing and adds line feed normalization.
 
 ## Installation
 
-	npm install single-line-log
+	npm install single-line-log2
 
 
 ## Usage
 
 ``` js
-var log = require('single-line-log').stdout;
+var log = require('single-line-log2').stdout;
 // or pass any stream:
-// var log = require('single-line-log')(process.stdout);
+// var log = require('single-line-log2')(process.stdout);
 
 var read = 0;
 var size = fs.statSync('super-large-file').size;
@@ -33,7 +34,7 @@ rs.on('data', function(data) {
 Clears the log (i.e., writes a newline).
 
 ``` js
-var log = require('single-line-log').stdout;
+var log = require('single-line-log2').stdout;
 
 log('Line 1');
 log.clear();
